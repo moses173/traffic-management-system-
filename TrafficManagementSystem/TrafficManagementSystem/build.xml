@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TrafficManagementSystem" default="jar" basedir=".">
+    <property file="nbproject/project.properties"/>
+
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="dist"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes">
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/TrafficManagementSystem.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="trafficmanagementsystem.MainClassName"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
